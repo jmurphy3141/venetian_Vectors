@@ -1,0 +1,16 @@
+[Unit]
+Description=FitVector FastAPI app
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=opc
+WorkingDirectory=/home/opc/venetian_Vectors
+Environment=PYTHONUNBUFFERED=1
+ExecStart=/home/opc/venetian_Vectors/.venv/bin/uvicorn server.app:app --host 0.0.0.0 --port 8000 --proxy-headers
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target

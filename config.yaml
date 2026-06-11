@@ -1,0 +1,18 @@
+# FitVector configuration
+# OCI GenAI auth uses Instance Principal in production. Do not store API keys here.
+
+region: "us-chicago-1"
+compartment_id: "ocid1.compartment.oc1..replace-with-compartment-ocid"
+
+inference:
+  enabled: true
+  service_endpoint: "https://inference.generativeai.us-chicago-1.oci.oraclecloud.com"
+  model_id: "ocid1.generativeaimodel.oc1.us-chicago-1.replace-with-model-ocid"
+  max_tokens: 1800
+  temperature: 0.2
+  top_p: 0.9
+  top_k: 0
+  system_message: >-
+    You are FitVector, a wardrobe recommendation assistant. Return ONLY valid
+    JSON matching the requested schema. Do not use markdown fences. Do not invent
+    garment IDs. Select outfits only from the supplied candidate IDs.
