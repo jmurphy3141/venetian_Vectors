@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import logging
+import time
 
 logger = logging.getLogger(__name__)
 
@@ -15,6 +16,8 @@ def run_inference(
     temperature: float = 0.2,
     top_p: float = 0.9,
     top_k: int = 0,
+    timeout_seconds: int = 180,
+    retries: int = 0,
     system_message: str = "",
 ) -> str:
     """Call OCI Generative AI Inference with Instance Principal auth."""
@@ -28,7 +31,7 @@ def run_inference(
         config={},
         signer=signer,
         service_endpoint=endpoint,
-        timeout=(10, 180),
+        timeout=(10, timeout_seconds),
     )
 
     content = oci.generative_ai_inference.models.TextContent()
@@ -58,7 +61,20 @@ def run_inference(
     chat_detail.compartment_id = compartment_id
 
     logger.info("OCI GenAI request model=%s prompt_len=%d", model_id, len(prompt))
-    response = client.chat(chat_detail)
+    response = None
+    for attempt in range(retries + 1):
+        try:
+            response = client.chat(chat_detail)
+            break
+        except Exception:
+            if attempt >= retries:
+                raise
+            logger.warning("OCI GenAI request failed; retrying", exc_info=True)
+            time.sleep(min(2**attempt, 5))
+
+    if response is None:
+        raise RuntimeError("OCI GenAI request did not return a response")
+
     text = _extract_text(response)
     logger.info("OCI GenAI response len=%d", len(text))
     return text

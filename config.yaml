@@ -1,17 +1,34 @@
 # FitVector configuration
 # OCI GenAI auth uses Instance Principal in production. Do not store API keys here.
 
+llm_defaults:
+  service_endpoint: "https://inference.generativeai.us-chicago-1.oci.oraclecloud.com"
+  model_id: "ocid1.generativeaimodel.oc1.us-chicago-1.amaaaaaask7dceyadd6ow2hxfppx7dmwmok4pon2jtsw2m2wiwoplexjrqaq"
+  max_tokens: 4000
+  temperature: 0.2
+  top_p: 0.9
+  top_k: 0
+  timeout_seconds: 120
+  retries: 2
+
+# OCI region must match the inference model OCID region.
 region: "us-chicago-1"
-compartment_id: "ocid1.compartment.oc1..replace-with-compartment-ocid"
+
+# Legacy ADK agent endpoint kept for reference; not used when inference.enabled=true.
+agent_endpoint_id: "ocid1.genaiagentendpoint.oc1.phx.amaaaaaaqx2yg4ya76r5ojh7olsu5uxpe4bmmslfrpylfcrwezgms5azbppa"
+
+compartment_id: "ocid1.compartment.oc1..aaaaaaaaea7vtpk24oq7tw6sfskc2hodr2ymbchddlblb6qqpad6rgt2fkwa"
 
 inference:
   enabled: true
   service_endpoint: "https://inference.generativeai.us-chicago-1.oci.oraclecloud.com"
-  model_id: "ocid1.generativeaimodel.oc1.us-chicago-1.replace-with-model-ocid"
-  max_tokens: 1800
+  model_id: "ocid1.generativeaimodel.oc1.us-chicago-1.amaaaaaask7dceyadd6ow2hxfppx7dmwmok4pon2jtsw2m2wiwoplexjrqaq"
+  max_tokens: 4000
   temperature: 0.2
   top_p: 0.9
   top_k: 0
+  timeout_seconds: 120
+  retries: 2
   system_message: >-
     You are FitVector, a wardrobe recommendation assistant. Return ONLY valid
     JSON matching the requested schema. Do not use markdown fences. Do not invent

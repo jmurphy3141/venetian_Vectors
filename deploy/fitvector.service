@@ -8,7 +8,10 @@ Type=simple
 User=opc
 WorkingDirectory=/home/opc/venetian_Vectors
 Environment=PYTHONUNBUFFERED=1
-ExecStart=/home/opc/venetian_Vectors/.venv/bin/uvicorn server.app:app --host 0.0.0.0 --port 8000 --proxy-headers
+Environment=VIRTUAL_ENV=/home/opc/venetian_Vectors/.venv
+Environment=PATH=/home/opc/venetian_Vectors/.venv/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin
+Environment=PYTHONPATH=/home/opc/venetian_Vectors/.venv/lib64/python3.11/site-packages:/home/opc/venetian_Vectors/.venv/lib/python3.11/site-packages
+ExecStart=/usr/bin/python3.11 -m uvicorn server.app:app --host 0.0.0.0 --port 8001 --proxy-headers
 Restart=always
 RestartSec=5
 

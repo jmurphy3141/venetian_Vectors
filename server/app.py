@@ -6,7 +6,6 @@ from typing import Any
 
 import yaml
 from fastapi import FastAPI
-from fastapi.responses import FileResponse
 from fastapi.staticfiles import StaticFiles
 
 from server.models import HealthResponse
@@ -51,12 +50,12 @@ def create_app() -> FastAPI:
             },
         )
 
-    @app.get("/")
-    def index():
-        index_path = STATIC_DIR / "index.html"
-        if index_path.exists():
-            return FileResponse(index_path)
-        return {"status": "ok", "message": "FitVector backend is running."}
+    if STATIC_DIR.exists():
+        app.mount("/", StaticFiles(directory=STATIC_DIR, html=True), name="fitvector-root")
+    else:
+        @app.get("/")
+        def index():
+            return {"status": "ok", "message": "FitVector backend is running."}
 
     return app
 

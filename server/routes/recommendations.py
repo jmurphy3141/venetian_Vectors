@@ -44,6 +44,8 @@ async def recommend(req: RecommendationRequest, request: Request) -> Recommendat
             temperature=float(inference_cfg.get("temperature", 0.2)),
             top_p=float(inference_cfg.get("top_p", 0.9)),
             top_k=int(inference_cfg.get("top_k", 0)),
+            timeout_seconds=int(inference_cfg.get("timeout_seconds", 180)),
+            retries=int(inference_cfg.get("retries", 0)),
             system_message=str(inference_cfg.get("system_message", "")),
         )
         parsed = parse_recommendation_json(raw_text)
