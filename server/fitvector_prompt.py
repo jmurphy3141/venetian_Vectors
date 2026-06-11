@@ -51,6 +51,7 @@ def build_recommendation_prompt(req: RecommendationRequest, candidates: list[dic
                         "formality": item["formality"],
                         "warmth": item["warmth"],
                         "tags": item["tags"],
+                        "hasImage": bool(item.get("imageUrl")),
                     }
                     for item in candidate["items"]
                 ],

@@ -1,9 +1,9 @@
-name,category,color,formality,warmth,season,tags,lastWorn,swatch
-Navy Blazer,layer,navy,business-formal,warm,all,client-meeting|classic,,#1f2a44
-White Oxford Shirt,top,white,business-formal,medium,all,classic|crisp,,#f8fafc
-Charcoal Trousers,bottom,charcoal,business-formal,medium,all,classic|tailored,,#30343b
-Black Oxfords,shoe,black,business-formal,medium,all,client-meeting|polished,,#111827
-Silk Dot Tie,accessory,burgundy,business-formal,light,all,accent|classic,,#7f1d1d
-Merino Crew Sweater,top,gray,business-casual,warm,fall|winter,comfortable|layering,,#737373
-Olive Chinos,bottom,green,business-casual,medium,all,relaxed|stretch,,#556b2f
-Brown Loafers,shoe,brown,business-casual,medium,all,comfortable|polished,,#6b3f24
+name,category,color,formality,warmth,season,tags,lastWorn,swatch,imageUrl,link
+Navy Blazer,layer,navy,business-formal,warm,all,client-meeting|classic,,#1f2a44,https://images.unsplash.com/photo-1594938298603-c8148c4dae35?auto=format&fit=crop&w=500&q=80,https://images.unsplash.com/photo-1594938298603-c8148c4dae35
+White Oxford Shirt,top,white,business-formal,medium,all,classic|crisp,,#f8fafc,https://images.unsplash.com/photo-1603252109303-2751441dd157?auto=format&fit=crop&w=500&q=80,https://images.unsplash.com/photo-1603252109303-2751441dd157
+Charcoal Trousers,bottom,charcoal,business-formal,medium,all,classic|tailored,,#30343b,https://images.unsplash.com/photo-1473966968600-fa801b869a1a?auto=format&fit=crop&w=500&q=80,https://images.unsplash.com/photo-1473966968600-fa801b869a1a
+Black Oxfords,shoe,black,business-formal,medium,all,client-meeting|polished,,#111827,https://images.unsplash.com/photo-1614252235316-8c857d38b5f4?auto=format&fit=crop&w=500&q=80,https://images.unsplash.com/photo-1614252235316-8c857d38b5f4
+Silk Dot Tie,accessory,burgundy,business-formal,light,all,accent|classic,,#7f1d1d,https://images.unsplash.com/photo-1593032465175-481ac7f401a0?auto=format&fit=crop&w=500&q=80,https://images.unsplash.com/photo-1593032465175-481ac7f401a0
+Merino Crew Sweater,top,gray,business-casual,warm,fall|winter,comfortable|layering,,#737373,https://images.unsplash.com/photo-1618354691373-d851c5c3a990?auto=format&fit=crop&w=500&q=80,https://images.unsplash.com/photo-1618354691373-d851c5c3a990
+Olive Chinos,bottom,green,business-casual,medium,all,relaxed|stretch,,#556b2f,https://images.unsplash.com/photo-1519238263530-99bdd11df2ea?auto=format&fit=crop&w=500&q=80,https://images.unsplash.com/photo-1519238263530-99bdd11df2ea
+Brown Loafers,shoe,brown,business-casual,medium,all,comfortable|polished,,#6b3f24,https://images.unsplash.com/photo-1608256246200-53e635b5b65f?auto=format&fit=crop&w=500&q=80,https://images.unsplash.com/photo-1608256246200-53e635b5b65f

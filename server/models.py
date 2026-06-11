@@ -16,6 +16,8 @@ class WardrobeItem(BaseModel):
     tags: list[str] = Field(default_factory=list)
     lastWorn: str = ""
     swatch: str = "#9ca3af"
+    imageUrl: str = ""
+    link: str = ""
 
 
 class EventContext(BaseModel):

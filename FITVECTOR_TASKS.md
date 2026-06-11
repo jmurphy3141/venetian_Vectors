@@ -10,6 +10,7 @@ FitVector is now a static browser app backed by a small FastAPI service. The bro
 - Health API: `GET /api/health`
 - OCI GenAI auth: Instance Principal on OCI Compute
 - Browser storage keys: `fitvector.profile`, `fitvector.wardrobe`, `fitvector.history`
+- Wardrobe CSV supports `imageUrl` and `link` columns so outfit cards can render garment photos from uploaded clothing lists.
 
 Frontend request shape:
 
@@ -150,6 +151,7 @@ Build:
 
 - Seeded professional wardrobe.
 - CSV import with required `name` and `category`.
+- Preserve `imageUrl` and `link` columns; use direct image links in top outfit cards.
 - Safe defaults for optional CSV fields.
 - LocalStorage persistence.
 - Open-Meteo weather from city presets.

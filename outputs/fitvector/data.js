@@ -16,25 +16,25 @@
   };
 
   const SEEDED_WARDROBE = [
-    item("navy-blazer", "Navy Blazer", "layer", "navy", "business-formal", "warm", "all", ["client-meeting", "classic"], "", "#1f2a44"),
-    item("charcoal-suit-jacket", "Charcoal Suit Jacket", "layer", "charcoal", "business-formal", "warm", "all", ["executive", "tailored"], "", "#30343b"),
-    item("camel-trench", "Camel Trench", "layer", "tan", "business-casual", "medium", "spring", ["rain", "commute"], "", "#b68b5f"),
-    item("white-oxford", "White Oxford Shirt", "top", "white", "business-formal", "medium", "all", ["classic", "crisp"], "", "#f8fafc"),
-    item("blue-poplin", "Light Blue Poplin", "top", "blue", "business-formal", "light", "all", ["client-meeting", "cool"], "", "#bcd7f0"),
-    item("gray-merino", "Gray Merino Crew", "top", "gray", "business-casual", "warm", "fall", ["comfortable", "layering"], "", "#737373"),
-    item("black-knit", "Black Knit Polo", "top", "black", "smart-casual", "light", "summer", ["modern", "travel"], "", "#171717"),
-    item("charcoal-trouser", "Charcoal Trousers", "bottom", "charcoal", "business-formal", "medium", "all", ["classic", "tailored"], "", "#3f3f46"),
-    item("navy-trouser", "Navy Trousers", "bottom", "navy", "business-casual", "medium", "all", ["versatile", "stretch"], "", "#24324f"),
-    item("olive-chinos", "Olive Chinos", "bottom", "green", "business-casual", "medium", "all", ["relaxed", "stretch"], "", "#556b2f"),
-    item("black-oxfords", "Black Oxfords", "shoe", "black", "business-formal", "medium", "all", ["client-meeting", "polished"], "", "#111827"),
-    item("brown-loafers", "Brown Loafers", "shoe", "brown", "business-casual", "medium", "all", ["comfortable", "polished"], "", "#6b3f24"),
-    item("white-sneakers", "Clean White Sneakers", "shoe", "white", "smart-casual", "light", "all", ["casual", "comfortable"], "", "#f5f5f4"),
-    item("burgundy-tie", "Silk Dot Tie", "accessory", "burgundy", "business-formal", "light", "all", ["accent", "classic"], "", "#7f1d1d"),
-    item("silver-watch", "Silver Watch", "accessory", "gray", "business-casual", "light", "all", ["minimal", "polished"], "", "#a3a3a3"),
-    item("navy-scarf", "Navy Scarf", "accessory", "navy", "business-casual", "warm", "winter", ["cold", "commute"], "", "#1e3a8a")
+    item("navy-blazer", "Navy Blazer", "layer", "navy", "business-formal", "warm", "all", ["client-meeting", "classic"], "", "#1f2a44", demoImage("photo-1594938298603-c8148c4dae35")),
+    item("charcoal-suit-jacket", "Charcoal Suit Jacket", "layer", "charcoal", "business-formal", "warm", "all", ["executive", "tailored"], "", "#30343b", demoImage("photo-1507679799987-c73779587ccf")),
+    item("camel-trench", "Camel Trench", "layer", "tan", "business-casual", "medium", "spring", ["rain", "commute"], "", "#b68b5f", demoImage("photo-1520975916090-3105956dac38")),
+    item("white-oxford", "White Oxford Shirt", "top", "white", "business-formal", "medium", "all", ["classic", "crisp"], "", "#f8fafc", demoImage("photo-1603252109303-2751441dd157")),
+    item("blue-poplin", "Light Blue Poplin", "top", "blue", "business-formal", "light", "all", ["client-meeting", "cool"], "", "#bcd7f0", demoImage("photo-1598032895397-b9472444bf93")),
+    item("gray-merino", "Gray Merino Crew", "top", "gray", "business-casual", "warm", "fall", ["comfortable", "layering"], "", "#737373", demoImage("photo-1618354691373-d851c5c3a990")),
+    item("black-knit", "Black Knit Polo", "top", "black", "smart-casual", "light", "summer", ["modern", "travel"], "", "#171717", demoImage("photo-1523398002811-999ca8dec234")),
+    item("charcoal-trouser", "Charcoal Trousers", "bottom", "charcoal", "business-formal", "medium", "all", ["classic", "tailored"], "", "#3f3f46", demoImage("photo-1473966968600-fa801b869a1a")),
+    item("navy-trouser", "Navy Trousers", "bottom", "navy", "business-casual", "medium", "all", ["versatile", "stretch"], "", "#24324f", demoImage("photo-1624378439575-d8705ad7ae80")),
+    item("olive-chinos", "Olive Chinos", "bottom", "green", "business-casual", "medium", "all", ["relaxed", "stretch"], "", "#556b2f", demoImage("photo-1519238263530-99bdd11df2ea")),
+    item("black-oxfords", "Black Oxfords", "shoe", "black", "business-formal", "medium", "all", ["client-meeting", "polished"], "", "#111827", demoImage("photo-1614252235316-8c857d38b5f4")),
+    item("brown-loafers", "Brown Loafers", "shoe", "brown", "business-casual", "medium", "all", ["comfortable", "polished"], "", "#6b3f24", demoImage("photo-1608256246200-53e635b5b65f")),
+    item("white-sneakers", "Clean White Sneakers", "shoe", "white", "smart-casual", "light", "all", ["casual", "comfortable"], "", "#f5f5f4", demoImage("photo-1549298916-b41d501d3772")),
+    item("burgundy-tie", "Silk Dot Tie", "accessory", "burgundy", "business-formal", "light", "all", ["accent", "classic"], "", "#7f1d1d", demoImage("photo-1593032465175-481ac7f401a0")),
+    item("silver-watch", "Silver Watch", "accessory", "gray", "business-casual", "light", "all", ["minimal", "polished"], "", "#a3a3a3", demoImage("photo-1523275335684-37898b6baf30")),
+    item("navy-scarf", "Navy Scarf", "accessory", "navy", "business-casual", "warm", "winter", ["cold", "commute"], "", "#1e3a8a", demoImage("photo-1601924994987-69e26d50dc26"))
   ];
 
-  function item(id, name, category, color, formality, warmth, season, tags, lastWorn, swatch) {
+  function item(id, name, category, color, formality, warmth, season, tags, lastWorn, swatch, imageUrl, link = "") {
     return {
       id: `item-${id}`,
       name,
@@ -45,8 +45,14 @@
       season,
       tags,
       lastWorn,
-      swatch
+      swatch,
+      imageUrl,
+      link
     };
+  }
+
+  function demoImage(photoId) {
+    return `https://images.unsplash.com/${photoId}?auto=format&fit=crop&w=500&q=80`;
   }
 
   function read(key, fallback) {
@@ -69,6 +75,13 @@
     }
     if (!localStorage.getItem(KEYS.wardrobe)) {
       write(KEYS.wardrobe, SEEDED_WARDROBE);
+    } else {
+      const seededById = new Map(SEEDED_WARDROBE.map((item) => [item.id, item]));
+      const hydrated = read(KEYS.wardrobe, []).map((existing) => {
+        const seeded = seededById.get(existing.id);
+        return seeded ? { ...seeded, ...existing, imageUrl: existing.imageUrl || seeded.imageUrl } : normalizeItem(existing);
+      });
+      write(KEYS.wardrobe, hydrated);
     }
     if (!localStorage.getItem(KEYS.history)) {
       write(KEYS.history, []);
@@ -144,7 +157,7 @@
     if (rows.length < 2) {
       return { ok: false, message: "CSV needs a header row and at least one item.", items: [] };
     }
-    const headers = rows[0].map((header) => header.trim());
+    const headers = rows[0].map(canonicalHeader);
     const nameIndex = headers.indexOf("name");
     const categoryIndex = headers.indexOf("category");
     if (nameIndex < 0 || categoryIndex < 0) {
@@ -188,8 +201,40 @@
       season: String(raw.season || "all").trim(),
       tags,
       lastWorn: String(raw.lastWorn || "").trim(),
-      swatch: String(raw.swatch || "#9ca3af").trim()
+      swatch: String(raw.swatch || "#9ca3af").trim(),
+      imageUrl: imageUrlFrom(raw),
+      link: String(raw.link || raw.links || raw.url || raw.productUrl || raw.producturl || raw.product_url || "").trim()
     };
+  }
+
+  function imageUrlFrom(raw) {
+    const direct = raw.imageUrl || raw.imageurl || raw.image_url || raw.imageLink || raw.imagelink || raw.image_link || raw.image || raw.photo || raw.photoUrl || raw.photourl || raw.photo_url;
+    if (direct) return String(direct).trim();
+    const link = String(raw.link || raw.links || raw.url || "").trim();
+    return looksLikeImage(link) ? link : "";
+  }
+
+  function canonicalHeader(header) {
+    const compact = String(header || "").trim().replace(/[\s-]+/g, "_").toLowerCase();
+    const aliases = {
+      imageurl: "imageUrl",
+      image_url: "imageUrl",
+      image_link: "imageLink",
+      image: "image",
+      photo: "photo",
+      photourl: "photoUrl",
+      photo_url: "photoUrl",
+      producturl: "productUrl",
+      product_url: "productUrl",
+      links: "links",
+      lastworn: "lastWorn",
+      last_worn: "lastWorn"
+    };
+    return aliases[compact] || compact;
+  }
+
+  function looksLikeImage(value) {
+    return /^https?:\/\/.+\.(png|jpe?g|gif|webp|avif)(\?.*)?$/i.test(value);
   }
 
   function parseCsv(text) {

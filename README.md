@@ -41,6 +41,7 @@ Production auth follows the `arch_assistant` pattern: OCI Python SDK, `Generativ
 5. Confirm every recommendation includes the pinned item.
 6. Click "Wear this" and confirm history is updated.
 7. Import `outputs/fitvector/sample-wardrobe.csv` from Wardrobe.
+8. Use CSV `imageUrl` links to render garment photos in outfit recommendations.
 
 ## Source Layout
 
@@ -54,11 +55,12 @@ deploy/                  OCI deployment checklist and systemd unit
 ## CSV Schema
 
 ```csv
-name,category,color,formality,warmth,season,tags,lastWorn,swatch
-Navy Blazer,layer,navy,business-formal,warm,all,client-meeting|classic,,#1f2a44
+name,category,color,formality,warmth,season,tags,lastWorn,swatch,imageUrl,link
+Navy Blazer,layer,navy,business-formal,warm,all,client-meeting|classic,,#1f2a44,https://example.com/blazer.png,https://example.com/blazer
 ```
 
 Required fields: `name`, `category`.
+Use `imageUrl` for a direct image link. Use `link` for a product/source URL; if `link` points directly to an image, FitVector will use it as the image too.
 
 ## Tests
 
